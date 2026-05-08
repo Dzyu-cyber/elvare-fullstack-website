@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elvaré - Shop</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600&amp;family=EB+Garamond:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#2a322a",
+                        "secondary-fixed": "#6dfe9c",
+                        "tertiary-container": "#ff8b7c",
+                        "primary-fixed": "#6bff8f",
+                        "secondary": "#4de082",
+                        "tertiary-fixed": "#ffdad5",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#242c24",
+                        "tertiary-fixed-dim": "#ffb4a9",
+                        "on-tertiary": "#60130d",
+                        "on-tertiary-fixed-variant": "#7f2a21",
+                        "primary": "#4be277",
+                        "on-background": "#dce5d9",
+                        "inverse-primary": "#006e2f",
+                        "inverse-surface": "#dce5d9",
+                        "tertiary": "#ffb5ab",
+                        "primary-container": "#22c55e",
+                        "surface-container-low": "#161d16",
+                        "on-secondary": "#003919",
+                        "outline-variant": "#3d4a3d",
+                        "on-primary-fixed-variant": "#005321",
+                        "on-secondary-fixed": "#00210c",
+                        "surface-container-highest": "#2f372e",
+                        "surface-tint": "#4ae176",
+                        "secondary-fixed-dim": "#4de082",
+                        "secondary-container": "#00b55d",
+                        "on-secondary-fixed-variant": "#005227",
+                        "on-surface": "#dce5d9",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#4ae176",
+                        "surface": "#0e150e",
+                        "on-primary": "#003915",
+                        "outline": "#869585",
+                        "surface-dim": "#0e150e",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "surface-container": "#1a221a",
+                        "surface-variant": "#2f372e",
+                        "on-tertiary-fixed": "#410001",
+                        "on-secondary-container": "#003e1c",
+                        "on-tertiary-container": "#76231b",
+                        "on-primary-fixed": "#002109",
+                        "background": "#0e150e",
+                        "surface-bright": "#333b33",
+                        "on-primary-container": "#004b1e",
+                        "surface-container-lowest": "#091009",
+                        "on-surface-variant": "#bccbb9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "container-max": "1440px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["ebGaramond"],
+                        "label-sm": ["dmSans"],
+                        "display-lg": ["ebGaramond"],
+                        "body-lg": ["dmSans"],
+                        "headline-md": ["ebGaramond"],
+                        "body-md": ["dmSans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/20">
+<div class="flex items-center gap-gutter">
+<!-- Navigation Links (Desktop) -->
+<ul class="hidden md:flex gap-8 items-center">
+<li><a class="font-body-md text-primary font-bold border-b border-primary pb-1 hover:text-primary transition-colors duration-300" href="#">Shop</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Collections</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Sale</a></li>
+</ul>
+</div>
+<!-- Brand Logo -->
+<a class="absolute left-1/2 -translate-x-1/2 font-headline-md text-headline-md tracking-tighter text-on-surface" href="#">ELVARÉ</a>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-6">
+<button class="text-on-surface hover:text-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform"><span class="material-symbols-outlined">search</span></button>
+<button class="text-on-surface hover:text-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform"><span class="material-symbols-outlined">favorite</span></button>
+<button class="text-on-surface hover:text-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform"><span class="material-symbols-outlined">shopping_bag</span></button>
+<button class="hidden md:block text-on-surface hover:text-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform"><span class="material-symbols-outlined">person</span></button>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<main class="pt-[120px] pb-24 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+<!-- Page Header -->
+<header class="mb-16">
+<h1 class="font-display-lg text-display-lg text-on-surface">Shop Collection</h1>
+</header>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Sidebar / Filters -->
+<aside class="md:col-span-3 hidden md:block pr-8">
+<div class="sticky top-[120px] space-y-10">
+<!-- Category Filter -->
+<div class="pb-8 border-b border-outline-variant/20">
+<h3 class="font-label-sm text-label-sm text-on-surface mb-6 uppercase tracking-wider">Category</h3>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li><a class="hover:text-on-surface transition-colors" href="#">All Clothing</a></li>
+<li><a class="text-primary" href="#">Outerwear</a></li>
+<li><a class="hover:text-on-surface transition-colors" href="#">Knitwear</a></li>
+<li><a class="hover:text-on-surface transition-colors" href="#">Shirting</a></li>
+<li><a class="hover:text-on-surface transition-colors" href="#">Trousers</a></li>
+<li><a class="hover:text-on-surface transition-colors" href="#">Accessories</a></li>
+</ul>
+</div>
+<!-- Price Filter -->
+<div class="pb-8 border-b border-outline-variant/20">
+<h3 class="font-label-sm text-label-sm text-on-surface mb-6 uppercase tracking-wider">Price</h3>
+<div class="space-y-4">
+<input class="w-full h-1 bg-surface-variant rounded-full appearance-none outline-none accent-primary-container" max="1000" min="0" type="range"/>
+<div class="flex justify-between font-label-sm text-on-surface-variant">
+<span>$0</span>
+<span>$1000+</span>
+</div>
+</div>
+</div>
+<!-- Size Filter -->
+<div class="pb-8 border-b border-outline-variant/20">
+<h3 class="font-label-sm text-label-sm text-on-surface mb-6 uppercase tracking-wider">Size</h3>
+<div class="flex flex-wrap gap-3">
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant/40 rounded-DEFAULT font-label-sm text-on-surface-variant hover:border-primary-container hover:text-on-surface transition-colors">XS</button>
+<button class="w-10 h-10 flex items-center justify-center border border-primary-container rounded-DEFAULT font-label-sm text-primary-container bg-primary-container/10 transition-colors">S</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant/40 rounded-DEFAULT font-label-sm text-on-surface-variant hover:border-primary-container hover:text-on-surface transition-colors">M</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant/40 rounded-DEFAULT font-label-sm text-on-surface-variant hover:border-primary-container hover:text-on-surface transition-colors">L</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant/40 rounded-DEFAULT font-label-sm text-on-surface-variant hover:border-primary-container hover:text-on-surface transition-colors">XL</button>
+</div>
+</div>
+<!-- Color Filter -->
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface mb-6 uppercase tracking-wider">Color</h3>
+<div class="flex flex-wrap gap-4">
+<button aria-label="Black" class="w-6 h-6 rounded-full bg-[#0e150e] border border-outline-variant ring-1 ring-offset-2 ring-offset-background ring-primary-container"></button>
+<button aria-label="Olive" class="w-6 h-6 rounded-full bg-[#3d4a3d] border border-outline-variant"></button>
+<button aria-label="Off White" class="w-6 h-6 rounded-full bg-[#dce5d9] border border-outline-variant"></button>
+<button aria-label="Charcoal" class="w-6 h-6 rounded-full bg-[#2f372e] border border-outline-variant"></button>
+<button aria-label="Dusty Rose" class="w-6 h-6 rounded-full bg-[#ffb5ab] border border-outline-variant"></button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Product Area -->
+<section class="col-span-1 md:col-span-9">
+<!-- Toolbar -->
+<div class="flex justify-between items-center mb-8 pb-4 border-b border-outline-variant/20">
+<span class="font-body-md text-on-surface-variant">124 Products</span>
+<div class="flex items-center gap-2 cursor-pointer group">
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider group-hover:text-primary-container transition-colors">Sort By: Newest</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary-container transition-colors">expand_more</span>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
+<!-- Product Card 1 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container mb-4">
+<img alt="Product 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="High-end fashion editorial photography. A model wearing a minimalist, sustainable luxury overcoat in a moody, dimly lit forest environment. Soft, diffused lighting highlighting the heavy texture of the organic wool. Dark aesthetic with deep greens and subtle bioluminescent undertones, conveying a futuristic 'Forest-Tech' vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCACYDkdbkGDogqjMnK6kgnzrkNv1gDDEzFGNYuO2_-Qypz7y8356LzG5NoFzoxgU71nFHK4Hqt3t2OXKXNgQL1tD5EKXKXl6QOrA-oLuGPf22Qtj2wEkWnCM80Wwqa6mqtB0MKFt2WWIkj4kAX0FjA0MLh-3Rog7YXwI9vn64EyAiiUaovV6a2olw0TbQGTunA8byapAQ4tyYAuSSZBoHubT49vI0BMZ59nNrVxXunaB2RUOhvgBUWuMOHWh5yA1ar7zV6xtntjLM"/>
+<!-- Hover Quick Action -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-11/12">
+<button class="w-full py-3 bg-surface/70 backdrop-blur-md border border-outline-variant/20 font-label-sm text-label-sm text-on-surface uppercase tracking-widest hover:bg-surface hover:text-primary-container transition-colors">Quick View</button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-body-md text-on-surface mb-1">Aura Tech-Wool Overcoat</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Forest Green</p>
+</div>
+<span class="font-body-md text-on-surface">$890</span>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container mb-4">
+<img alt="Product 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist fashion still life. A structured, sustainable luxury blazer draped elegantly over a raw concrete block. Dark, atmospheric lighting creates dramatic shadows. The color palette is restricted to deep blacks, muted olives, and stark highlights, emphasizing a quiet luxury and advanced material aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClP9kLWtdoBb7Rgflnce-Nx-YLbkzLGdm58jH9ViX0HuIB1SMmqzzKjA6rOWicOdIitBku1eIq_rJQUZPXzrp5Ab0ALDHqfHJBRllWKbXKUekLxisbOi3hiOM9AnsDIqrnbVs8IU0u-xC-OyTXGSwqf5beCvHaOwjaMUZMd5EOWrVFMV65IimpleWoS_a3MjeQNBdSbXBm1H_MofIstzm7UDenTPcIegycuumbmse0GIfVgWJGKvmgR3BPvcQz7TLKMeRMdma0tus"/>
+<div class="absolute top-4 left-4 bg-primary-container/20 px-2 py-1 rounded border border-primary-container/30">
+<span class="font-label-sm text-label-sm text-primary-container">Organic</span>
+</div>
+<!-- Hover Quick Action -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-11/12">
+<button class="w-full py-3 bg-surface/70 backdrop-blur-md border border-outline-variant/20 font-label-sm text-label-sm text-on-surface uppercase tracking-widest hover:bg-surface hover:text-primary-container transition-colors">Quick View</button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-body-md text-on-surface mb-1">Syntropy Tailored Blazer</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Obsidian</p>
+</div>
+<span class="font-body-md text-on-surface">$650</span>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container mb-4">
+<img alt="Product 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="High-fashion product shot of minimalist leather boots resting on damp moss. The lighting is ethereal and cool-toned, simulating a moonlit forest floor. The image embodies a sophisticated, sustainable aesthetic with dark, earthy tones and sharp, focused details on the footwear's craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWLRtM8Bf82jgdxyQx6dtpQVio-XwshXkS6JBh2ZXjSkaQZtk6zj1QR9YFRbdzwJLIQGFXoTzz00iKiegmO-_cCF-k9UBxhBcCZqIMjUStnnPZP8WZnRo7nLARouKca7ZOfK7arzWO-xGTARZ18pnXIBH1X8kVV5c4fenIPv_nyD0y2AnHfInFxbUjlLiOXk5Mv8qKTUY9rcaiYJ_JmCmmHibjxRE0F3ax6L-OM6OSbpiGDKyssx5l4trHk6hyje_gbVNXuPQopn0"/>
+<!-- Hover Quick Action -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-11/12">
+<button class="w-full py-3 bg-surface/70 backdrop-blur-md border border-outline-variant/20 font-label-sm text-label-sm text-on-surface uppercase tracking-widest hover:bg-surface hover:text-primary-container transition-colors">Quick View</button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-body-md text-on-surface mb-1">Mycelium Leather Boots</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Earth</p>
+</div>
+<span class="font-body-md text-on-surface">$420</span>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container mb-4">
+<img alt="Product 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Editorial shot of a flowing, translucent knit sweater. The garment hangs against a backdrop of deeply shadowed, dark grey stone. A single beam of soft light catches the intricate weave of the sustainable fabric. The mood is serene, cold, and highly refined, fitting a quiet luxury brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_cwk1qjZNuJ0PhZrSj4Be7FRvp_kmVTj7ynJbloMnHQHigJe-0tUbWslR2jhf8ymhQMPnUc-hBlD_efeRlp-KX9t9mHctUJXBKCxbsT9L1T3AfPOY5j66iCt5S9xOEv3hokIzoSrgZrUV1Jn0ycuuAVr3b1I-3qQPZY4PrtiBGBDT2aW10QOKlUYZgYLGXPaG0qB9swd7mR8doZSp7ipMwfAC95EGbl9Hrs7UXTQT_o-W7V1RpM4H8R7WLgk8ESKmZ8CNt5-WHeY"/>
+<!-- Hover Quick Action -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-11/12">
+<button class="w-full py-3 bg-surface/70 backdrop-blur-md border border-outline-variant/20 font-label-sm text-label-sm text-on-surface uppercase tracking-widest hover:bg-surface hover:text-primary-container transition-colors">Quick View</button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-body-md text-on-surface mb-1">Ether Knit Sweater</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Ash Grey</p>
+</div>
+<span class="font-body-md text-on-surface">$380</span>
+</div>
+</article>
+<!-- Product Card 5 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container mb-4">
+<img alt="Product 5" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up of a sustainable luxury garment showcasing the texture of heavy, organic cotton. The lighting is low-key, creating deep shadows that emphasize the folds and drape of the fabric. The color palette is minimal, focusing on deep blacks and subtle olive undertones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf9qMRZ7Emb8VXPSLMYzg8GINuTjlaNtNNzLHIkL53BX9h55Tqu9sqcyghOjoBrpyrTcgCFznH28xvRdMiEtvua3EUH1CcXMHnOURZVPLqFM1Bv_NiYdjeoL5HPU97r-TLUROjM-bnJo9gZw-8KBFFxGHyrGCeelGQ0OfW17iDLNv5BDfcRNNv-Z1d_VMiveIU8WqvUlnkFjcrIBc_zwv8KunnC7dBATxZCE8gUGjje5Jc7un9m4twtqnX9Ul4_6wHsmwEz1MZOBA"/>
+<div class="absolute top-4 left-4 bg-primary-container/20 px-2 py-1 rounded border border-primary-container/30">
+<span class="font-label-sm text-label-sm text-primary-container">Pre-Order</span>
+</div>
+<!-- Hover Quick Action -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-11/12">
+<button class="w-full py-3 bg-surface/70 backdrop-blur-md border border-outline-variant/20 font-label-sm text-label-sm text-on-surface uppercase tracking-widest hover:bg-surface hover:text-primary-container transition-colors">Quick View</button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-body-md text-on-surface mb-1">Resonance Wide Trousers</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Midnight</p>
+</div>
+<span class="font-body-md text-on-surface">$290</span>
+</div>
+</article>
+<!-- Product Card 6 -->
+<article class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container mb-4">
+<img alt="Product 6" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sleek, minimalist cross-body bag made from innovative sustainable materials, photographed against a seamless dark background. A subtle, luminous green light hits the edge of the bag, providing a 'Forest-Tech' neon accent in an otherwise completely dark, elegant setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQwgLx8ei5hdEq61zjZdHt46k3OVDGdLVjR-j_Hel-69YViVlv746lgmFPt9oOFfapjvVMkDtG2X8JosQzrf4gEBWQA9eMD0uubzv8oWs4zc1XVqUy_Su4b7lGCATZDvsCQ5Jq4J07f6BDFZYZ0IwZ86DMRdMU4_NT2vuVNX_6IBxndghNg-W_hDSA0HK9ogwC_tOzq3Vmi_1QZVzCJenMTXszaBrswBSSq2NLD_6YjiuGHe-MUxygP7-1us1aRIfgSPOk7uCFprg"/>
+<!-- Hover Quick Action -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-11/12">
+<button class="w-full py-3 bg-surface/70 backdrop-blur-md border border-outline-variant/20 font-label-sm text-label-sm text-on-surface uppercase tracking-widest hover:bg-surface hover:text-primary-container transition-colors">Quick View</button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-body-md text-on-surface mb-1">Kinetic Crossbody</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Carbon</p>
+</div>
+<span class="font-body-md text-on-surface">$185</span>
+</div>
+</article>
+</div>
+<!-- Load More Button -->
+<div class="mt-20 flex justify-center">
+<button class="bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase tracking-widest px-10 py-4 rounded-DEFAULT shadow-[0_0_20px_rgba(34,197,94,0.2)] hover:bg-primary transition-all duration-300">
+                        Load More Products
+                    </button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-4 gap-gutter bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="col-span-1 md:col-span-4 mb-8">
+<span class="font-headline-md text-headline-md text-on-surface">ELVARÉ</span>
+</div>
+<div class="col-span-1 flex flex-col gap-4">
+<a class="font-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Shop All</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">New Arrivals</a>
+</div>
+<div class="col-span-1 flex flex-col gap-4">
+<a class="font-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Sustainability</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Journal</a>
+</div>
+<div class="col-span-1 flex flex-col gap-4">
+<a class="font-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Shipping</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Returns</a>
+</div>
+<div class="col-span-1 flex flex-col gap-4">
+<a class="font-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Contact</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Privacy</a>
+</div>
+<div class="col-span-1 md:col-span-4 mt-12 pt-8 border-t border-outline-variant/10">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 ELVARÉ. Sustainable Luxury.</p>
+</div>
+</footer>
+</body></html>

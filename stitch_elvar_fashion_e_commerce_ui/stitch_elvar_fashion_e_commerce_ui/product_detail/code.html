@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELVARÉ - Product Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&amp;family=EB+Garamond:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-on-surface": "#2a322a",
+                      "secondary-fixed": "#6dfe9c",
+                      "tertiary-container": "#ff8b7c",
+                      "primary-fixed": "#6bff8f",
+                      "secondary": "#4de082",
+                      "tertiary-fixed": "#ffdad5",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-high": "#242c24",
+                      "tertiary-fixed-dim": "#ffb4a9",
+                      "on-tertiary": "#60130d",
+                      "on-tertiary-fixed-variant": "#7f2a21",
+                      "primary": "#4be277",
+                      "on-background": "#dce5d9",
+                      "inverse-primary": "#006e2f",
+                      "inverse-surface": "#dce5d9",
+                      "tertiary": "#ffb5ab",
+                      "primary-container": "#22c55e",
+                      "surface-container-low": "#161d16",
+                      "on-secondary": "#003919",
+                      "outline-variant": "#3d4a3d",
+                      "on-primary-fixed-variant": "#005321",
+                      "on-secondary-fixed": "#00210c",
+                      "surface-container-highest": "#2f372e",
+                      "surface-tint": "#4ae176",
+                      "secondary-fixed-dim": "#4de082",
+                      "secondary-container": "#00b55d",
+                      "on-secondary-fixed-variant": "#005227",
+                      "on-surface": "#dce5d9",
+                      "error": "#ffb4ab",
+                      "primary-fixed-dim": "#4ae176",
+                      "surface": "#0e150e",
+                      "on-primary": "#003915",
+                      "outline": "#869585",
+                      "surface-dim": "#0e150e",
+                      "on-error": "#690005",
+                      "error-container": "#93000a",
+                      "surface-container": "#1a221a",
+                      "surface-variant": "#2f372e",
+                      "on-tertiary-fixed": "#410001",
+                      "on-secondary-container": "#003e1c",
+                      "on-tertiary-container": "#76231b",
+                      "on-primary-fixed": "#002109",
+                      "background": "#0e150e",
+                      "surface-bright": "#333b33",
+                      "on-primary-container": "#004b1e",
+                      "surface-container-lowest": "#091009",
+                      "on-surface-variant": "#bccbb9"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "16px",
+                      "container-max": "1440px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "ebGaramond"
+                      ],
+                      "label-sm": [
+                              "dmSans"
+                      ],
+                      "display-lg": [
+                              "ebGaramond"
+                      ],
+                      "body-lg": [
+                              "dmSans"
+                      ],
+                      "headline-md": [
+                              "ebGaramond"
+                      ],
+                      "body-md": [
+                              "dmSans"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .glass-panel {
+            background-color: theme('colors.surface / 70%');
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid theme('colors.outline-variant / 20%');
+        }
+        .glow-effect:hover {
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md antialiased text-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/20 hidden md:flex">
+<div class="flex items-center space-x-gutter">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300" href="#">Shop</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300" href="#">Collections</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="text-primary font-bold border-b border-primary pb-1" href="#">Sale</a>
+</div>
+<div class="font-headline-md text-headline-md tracking-tighter text-on-surface">ELVARÉ</div>
+<div class="flex items-center space-x-gutter text-on-surface">
+<button class="hover:text-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform"><span class="material-symbols-outlined">search</span></button>
+<button class="hover:text-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform"><span class="material-symbols-outlined">favorite</span></button>
+<button class="hover:text-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform"><span class="material-symbols-outlined">shopping_bag</span></button>
+<button class="hover:text-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform"><span class="material-symbols-outlined">person</span></button>
+</div>
+</nav>
+<!-- Mobile Top Header Fallback -->
+<header class="md:hidden w-full flex justify-between items-center px-margin-mobile py-4 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/20 sticky top-0 z-50">
+<div class="font-headline-md text-headline-md tracking-tighter text-on-surface">ELVARÉ</div>
+<div class="flex space-x-4">
+<button class="text-on-surface"><span class="material-symbols-outlined">search</span></button>
+<button class="text-on-surface"><span class="material-symbols-outlined">shopping_bag</span></button>
+</div>
+</header>
+<main class="flex-grow pt-24 md:pt-32 pb-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-16 items-start">
+<!-- Left Column: Images -->
+<div class="lg:col-span-7 space-y-base lg:sticky lg:top-32">
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-DEFAULT overflow-hidden">
+<img alt="Main Product Image" class="w-full h-full object-cover" data-alt="A high-fashion editorial style photograph of a sleek, minimalist organic cotton trench coat draped elegantly on a mannequin against a dark, moody background. The lighting is dramatic, highlighting the fine texture of the sustainable fabric. The overall aesthetic perfectly captures a quiet luxury, forest-tech vibe with deep shadows and subtle natural highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMB6T7sdul7CYY3gY0UDFnnR48kAmOkPpmFG3UEL0dj9qvKLUwY6yo7OnOmdy9cGZMXmsbFhEmra-1pWVgtr5TzfqgdKC9Wti6s_D_cwP6ZgIdtAINS8orELrykQ2cBWwOIZGHSZ6XmmdecDDLwAA8Ts3Xmm-fjszwzW7_NHJFXZP6ZkCk_THgcX664G5h1BD_s9Y5VpZ5XM5g7TxH53sFJMEflesCLFeKIjC90iDRaUFdAdLC1vzULtdzlKoyet7_SGsDckELGzM"/>
+</div>
+<div class="grid grid-cols-4 gap-base">
+<div class="aspect-square bg-surface-container rounded-DEFAULT overflow-hidden border border-primary/30 cursor-pointer">
+<img alt="Thumbnail 1" class="w-full h-full object-cover" data-alt="Detail shot of the collar and lapel of a dark, minimalist organic cotton trench coat. The image is styled with a quiet luxury aesthetic, showcasing precision stitching and high-quality sustainable fabric under dramatic, moody lighting against a black background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsQ1M5xYXgCDbQAqrxu9a5KR8c6K-x-6aMQ8BGGHiBoppuGVPQi5eSifzWZxZnwMcQaXSvw2ZH05WlgEPxsf_3ZeE2xLqlgZVA_EpNrqG5tk2LW_8d8RMdgbmqXd16fvPPij1tI8xW2YxlIycG_Nc4fRpt7Vsdhv4STho343KAcepL7zGrHCm-IcillhE8ieMBBywXKthtvbwk7L-kVp_NXipyT1OwAnjbrY2TuQyM3vruY01OxvAS9b88hW15nKgSnQlpBYonRBc"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-DEFAULT overflow-hidden opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+<img alt="Thumbnail 2" class="w-full h-full object-cover" data-alt="Close up texture shot of a sustainable, organic cotton fabric in a deep forest green hue. The lighting emphasizes the raw, natural weave of the material while maintaining a sleek, modern, and dark-mode premium look typical of high-end minimalist fashion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCpO6ZQmfpwqSuY7Pw8pQZHxMP3GFKZMAXL_wIS5929xrdQUDiTs1_P5r1hWyL5_HooUfq8OgCV_VVyE6bmPimebOKSbAXPGdqCRBHXxRoUeuOUS9yhxCq24XNLgrdBv_1SGaW8StOZ5u_p2x5nSB5nLWPsxiCp496jDwhehHJd344EgoNpcHWr5DL0t0MoVGlSoeWuH3IzS1OcKsLkFwzH9jXGdj3PRmTfA77qZ0l2Tbvin7FrVR0RqlJPuco3R48yhtjZXJTrfE"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-DEFAULT overflow-hidden opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+<img alt="Thumbnail 3" class="w-full h-full object-cover" data-alt="A stylish flat lay of a minimalist trench coat belt and matte black hardware. The composition is highly asymmetric and uses extensive negative space, adhering to a quiet luxury aesthetic. The lighting is soft yet directional, highlighting the premium quality of the sustainable materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt1p0Ss_1_vX_6N3Xd5r_iXRDN0AwpbRi0Z0VuCC9P9b2an5X_FaST7Gz_wIQsNDhCf9-hUov6MaB2D_2sKVTE-viTjmwwqKSH15SdSLzXhVHJy--dGGj0WP8HCdzxgS_NgcBkdOoD7hqXSLJlPPAlFCSe7t6A1gjQpS1bllOKzrf2bC_wPiSkmPs-gdgepjGAqYk4eubBxOH6VkvfjBclaO3Xwhx7Gy6jzZLPoX2BoWiVFVeN42RGVHkHWa3mLDqpM2TWF23XnVI"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-DEFAULT overflow-hidden opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+<img alt="Thumbnail 4" class="w-full h-full object-cover" data-alt="A model wearing a minimalist dark green trench coat, shown from the back walking away into a softly blurred, moody urban landscape. The focus is on the drape and flow of the sustainable fabric, emphasizing movement and a sleek, future-facing forest-tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA84DJS48lPfTk7UVmLdsCkyC36s0LlwdYYsQYKZO0OOHaG5IOb166dHdMU6ZGomYpURQ6ljuxvZHzgEuHaLsZ-XdK4cgzMf-7wTJf5waEt7gpB-rdKG2fa7wphN7SEGKbZjHDj0ma3xfcdaYwLtmYkfKVPsROdXMMjLxIXeiXcrbqGOjBZAe4LFYRt-1KmAbodE4cbgGJKWh0Hbsc470gycHTVco150zq40LK2uO3cRzMyFi3DWlXWUFtI0IEofuNxnrjbDtB46Tw"/>
+</div>
+</div>
+</div>
+<!-- Right Column: Product Details -->
+<div class="lg:col-span-5 flex flex-col space-y-8">
+<!-- Breadcrumbs & Title -->
+<div>
+<nav class="flex text-label-sm font-label-sm text-on-surface-variant mb-4 space-x-2">
+<a class="hover:text-primary transition-colors" href="#">Shop</a>
+<span>/</span>
+<a class="hover:text-primary transition-colors" href="#">Outerwear</a>
+<span>/</span>
+<span class="text-on-surface">The Viridian Trench</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">The Viridian Trench</h1>
+<div class="flex items-center space-x-4 mb-4">
+<div class="flex text-primary text-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined">star_half</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant underline cursor-pointer">42 Reviews</span>
+</div>
+<div class="flex items-center space-x-4">
+<span class="font-body-lg text-body-lg text-on-surface-variant line-through">$450</span>
+<span class="font-headline-md text-headline-md text-primary">$320</span>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2 py-1 rounded-DEFAULT border border-primary/20">SALE</span>
+</div>
+</div>
+<div class="h-px w-full bg-outline-variant/30"></div>
+<!-- Configuration -->
+<div class="space-y-6">
+<!-- Color -->
+<div>
+<div class="flex justify-between items-center mb-3">
+<span class="font-label-sm text-label-sm text-on-surface">COLOR</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Deep Moss</span>
+</div>
+<div class="flex space-x-3">
+<button class="w-8 h-8 rounded-full bg-[#2A322A] border-2 border-primary ring-2 ring-transparent focus:ring-primary/30 transition-all"></button>
+<button class="w-8 h-8 rounded-full bg-[#1A1A1A] border-2 border-transparent hover:border-outline-variant transition-all"></button>
+<button class="w-8 h-8 rounded-full bg-[#8A817C] border-2 border-transparent hover:border-outline-variant transition-all"></button>
+</div>
+</div>
+<!-- Size -->
+<div>
+<div class="flex justify-between items-center mb-3">
+<span class="font-label-sm text-label-sm text-on-surface">SIZE</span>
+<button class="font-label-sm text-label-sm text-on-surface-variant underline hover:text-primary transition-colors">Size Guide</button>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="py-2 border border-outline-variant text-on-surface hover:border-primary transition-colors rounded-DEFAULT font-label-sm text-label-sm">XS</button>
+<button class="py-2 border border-primary bg-primary/5 text-primary rounded-DEFAULT font-label-sm text-label-sm">S</button>
+<button class="py-2 border border-outline-variant text-on-surface hover:border-primary transition-colors rounded-DEFAULT font-label-sm text-label-sm">M</button>
+<button class="py-2 border border-outline-variant text-on-surface/40 bg-surface-container-low cursor-not-allowed rounded-DEFAULT font-label-sm text-label-sm relative overflow-hidden">
+                                L
+                                <div class="absolute inset-0 w-full h-px bg-outline-variant top-1/2 -rotate-12"></div>
+</button>
+</div>
+</div>
+<!-- Quantity -->
+<div>
+<span class="font-label-sm text-label-sm text-on-surface block mb-3">QUANTITY</span>
+<div class="flex items-center border border-outline-variant rounded-DEFAULT w-min">
+<button class="p-2 text-on-surface hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="w-8 text-center font-body-md text-on-surface">1</span>
+<button class="p-2 text-on-surface hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex space-x-4 pt-4">
+<button class="flex-grow bg-primary-container text-[#0C0D0C] font-label-sm text-label-sm py-4 rounded-DEFAULT glow-effect transition-all flex justify-center items-center">
+                        Add to Bag
+                    </button>
+<button class="w-14 flex items-center justify-center border border-outline-variant rounded-DEFAULT text-on-surface hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+</div>
+<div class="h-px w-full bg-outline-variant/30"></div>
+<!-- Content Accordions -->
+<div class="space-y-4">
+<div class="border-b border-outline-variant/30 pb-4">
+<button class="w-full flex justify-between items-center text-on-surface hover:text-primary transition-colors group">
+<span class="font-label-sm text-label-sm">DESCRIPTION</span>
+<span class="material-symbols-outlined transform group-hover:rotate-180 transition-transform duration-300">expand_more</span>
+</button>
+<div class="pt-4 text-on-surface-variant font-body-md text-body-md pr-8">
+                            Crafted from 100% organic heavy-weight cotton, the Viridian Trench redefines transitional outerwear. Featuring dropped shoulders, a dramatic lapel, and raw edges that gracefully age with wear. Designed for a lifetime of versatile styling.
+                        </div>
+</div>
+<div class="border-b border-outline-variant/30 pb-4">
+<button class="w-full flex justify-between items-center text-on-surface hover:text-primary transition-colors group">
+<span class="font-label-sm text-label-sm">DETAILS &amp; CARE</span>
+<span class="material-symbols-outlined transform transition-transform duration-300">expand_more</span>
+</button>
+</div>
+<div class="border-b border-outline-variant/30 pb-4">
+<button class="w-full flex justify-between items-center text-on-surface hover:text-primary transition-colors group">
+<span class="font-label-sm text-label-sm">SHIPPING &amp; RETURNS</span>
+<span class="material-symbols-outlined transform transition-transform duration-300">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-4 gap-gutter bg-surface-container-lowest border-t border-outline-variant/20">
+<div>
+<div class="font-headline-md text-headline-md text-on-surface mb-4">ELVARÉ</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 ELVARÉ. Sustainable Luxury.</p>
+</div>
+<div class="flex flex-col space-y-2">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Shop All</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">New Arrivals</a>
+</div>
+<div class="flex flex-col space-y-2">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Sustainability</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Journal</a>
+</div>
+<div class="flex flex-col space-y-2">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Shipping</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Returns</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Contact</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Privacy</a>
+</div>
+</footer>
+</body></html>

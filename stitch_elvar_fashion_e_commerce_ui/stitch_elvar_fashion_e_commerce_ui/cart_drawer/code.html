@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELVARÉ - Cart Drawer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#2a322a",
+                        "secondary-fixed": "#6dfe9c",
+                        "tertiary-container": "#ff8b7c",
+                        "primary-fixed": "#6bff8f",
+                        "secondary": "#4de082",
+                        "tertiary-fixed": "#ffdad5",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#242c24",
+                        "tertiary-fixed-dim": "#ffb4a9",
+                        "on-tertiary": "#60130d",
+                        "on-tertiary-fixed-variant": "#7f2a21",
+                        "primary": "#4be277",
+                        "on-background": "#dce5d9",
+                        "inverse-primary": "#006e2f",
+                        "inverse-surface": "#dce5d9",
+                        "tertiary": "#ffb5ab",
+                        "primary-container": "#22c55e",
+                        "surface-container-low": "#161d16",
+                        "on-secondary": "#003919",
+                        "outline-variant": "#3d4a3d",
+                        "on-primary-fixed-variant": "#005321",
+                        "on-secondary-fixed": "#00210c",
+                        "surface-container-highest": "#2f372e",
+                        "surface-tint": "#4ae176",
+                        "secondary-fixed-dim": "#4de082",
+                        "secondary-container": "#00b55d",
+                        "on-secondary-fixed-variant": "#005227",
+                        "on-surface": "#dce5d9",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#4ae176",
+                        "surface": "#0e150e",
+                        "on-primary": "#003915",
+                        "outline": "#869585",
+                        "surface-dim": "#0e150e",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "surface-container": "#1a221a",
+                        "surface-variant": "#2f372e",
+                        "on-tertiary-fixed": "#410001",
+                        "on-secondary-container": "#003e1c",
+                        "on-tertiary-container": "#76231b",
+                        "on-primary-fixed": "#002109",
+                        "background": "#0e150e",
+                        "surface-bright": "#333b33",
+                        "on-primary-container": "#004b1e",
+                        "surface-container-lowest": "#091009",
+                        "on-surface-variant": "#bccbb9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "container-max": "1440px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["ebGaramond"],
+                        "label-sm": ["dmSans"],
+                        "display-lg": ["ebGaramond"],
+                        "body-lg": ["dmSans"],
+                        "headline-md": ["ebGaramond"],
+                        "body-md": ["dmSans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glow-button {
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md h-screen overflow-hidden">
+<!-- Background context (Home Page mock) -->
+<div class="absolute inset-0 z-0">
+<header class="fixed top-0 w-full z-10 flex justify-between items-center px-margin-desktop py-4 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/20">
+<div class="font-headline-md text-headline-md tracking-tighter text-on-surface">ELVARÉ</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300" href="#">Shop</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300" href="#">Collections</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300" href="#">Sale</a>
+</nav>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface hover:text-primary cursor-pointer">search</span>
+<span class="material-symbols-outlined text-on-surface hover:text-primary cursor-pointer">favorite</span>
+<span class="material-symbols-outlined text-primary cursor-pointer relative">shopping_bag</span>
+<span class="material-symbols-outlined text-on-surface hover:text-primary cursor-pointer">person</span>
+</div>
+</header>
+<div class="w-full h-full bg-surface-container-low flex items-center justify-center pt-24" data-alt="A moody, atmospheric fashion lifestyle shot. The image shows a dark, minimalist forest setting with a model wearing sustainable, high-end organic clothing. The lighting is soft and diffused, emphasizing the texture of the fabrics and the deep green tones of the environment, perfectly matching the 'Forest-Tech' dark mode aesthetic of the brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDzWVd5bfpduJoJeGCBPBA6H9gbXbbnMiicptQVCaU_am4NzCh2_kbMik-mxBQ7S7E95H1ARNU0w3crlTHO6yurZTnGhHuoUFxfRitkuxbxdtxG_LkXzGzm-__BUpL-_VtcsRGfWTz2lbpWs16-3LJPx9pJCuXlWOAgHlkKsE-BX9cqjpNWOSQdRBn4LTK7-6Smnf5W-fNjXCSvNy5y_f-28FrE2NV2orhLfk5FssCa1KOCwCT22SiDG0fzhqZFfo5PjU7MF1l4TP8'); background-size: cover; background-position: center;">
+<!-- Placeholder for background content -->
+</div>
+</div>
+<!-- Semi-transparent Overlay -->
+<div class="absolute inset-0 bg-surface/80 backdrop-blur-sm z-40 transition-opacity"></div>
+<!-- Cart Drawer Panel -->
+<aside class="absolute top-0 right-0 h-full w-full max-w-md bg-surface/90 backdrop-blur-xl border-l border-outline-variant/30 z-50 flex flex-col shadow-2xl transform transition-transform duration-500 translate-x-0">
+<!-- Header -->
+<div class="flex items-center justify-between px-8 py-6 border-b border-outline-variant/20">
+<h2 class="font-headline-md text-headline-md text-on-surface">Your Bag (3)</h2>
+<button class="text-on-surface-variant hover:text-primary transition-colors group">
+<span class="material-symbols-outlined text-[28px] group-hover:rotate-90 transition-transform duration-300">close</span>
+</button>
+</div>
+<!-- Cart Items List -->
+<div class="flex-1 overflow-y-auto px-8 py-6 space-y-8 custom-scrollbar">
+<!-- Item 1 -->
+<div class="flex gap-6 pb-6 border-b border-outline-variant/10">
+<div class="w-24 h-32 bg-surface-container overflow-hidden rounded">
+<img alt="Product Image" class="w-full h-full object-cover opacity-90" data-alt="A detailed close-up shot of a high-end, sustainable luxury jacket. The garment is dark forest green with a refined, minimalist cut, photographed against a stark black background to highlight its texture. The lighting is dramatic and precise, fitting the sleek, quiet luxury aesthetic of the brand's dark mode design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDf22bvpGyVZBQIsbC8d-xFBO3oAszh18sKPHAQjNET0DRGJSyrsu-z6Qdxba85_n1bmxjD_K-2oni2qNt0BhHedcln7uc2osJUZrZ87lL1x0MoYN3L_MU3G5-YdFi4Q1t8UWwo8FrIdbgZTrJioGRSDPYeWEBgMBAydXwwXZ9DJvaIopE9cUJrarGZ8q3qI3w5TV1mId9gwiMaF9g5buDgUS05_ozgL_auWU_uBZPlWUGjhlPctOu4pvOlk3MMGRU0tKBDJMbNqE"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-body-md text-body-md text-on-surface">The Moss Overcoat</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">$485</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Size: M | Color: Pine</p>
+</div>
+<div class="flex items-center justify-between mt-4">
+<div class="flex items-center border border-outline-variant/30 rounded px-2 py-1 bg-surface-container-low">
+<button class="text-on-surface-variant hover:text-primary px-1"><span class="material-symbols-outlined text-[16px]">remove</span></button>
+<span class="font-label-sm text-label-sm text-on-surface px-3">1</span>
+<button class="text-on-surface-variant hover:text-primary px-1"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-error transition-colors underline decoration-1 underline-offset-4">Remove</button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-6 pb-6 border-b border-outline-variant/10">
+<div class="w-24 h-32 bg-surface-container overflow-hidden rounded">
+<img alt="Product Image" class="w-full h-full object-cover opacity-90" data-alt="A stylish, minimalist white t-shirt made from organic cotton, draped elegantly. The shirt is illuminated with soft, low-key lighting against a dark charcoal background. The composition is clean and premium, evoking a sense of sustainable luxury and modern glassmorphic design cues, perfectly aligning with the dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtOluauli2uXaS9wZCkc76YtowtHdNm9RolylGyaRL6_GmygNIpAhEijvP6QbpTtGBc-wc2bDwPAxzgnhBKUn6KV8LuJOb2avDzoA7lF9_Fa1A7utLdZC9Y7W54Zb9tE66QcPc5QP9RD0c8VZhKwQ9sSMPh-TE80uAZsuBsyo2yqa6ElO4rcA0QRqLgpe5Pzg8GU4yDl3_laqY0F8oQ-sY_96pOR3ftwdpoOgJBKyiEugUKtYj0XQHMDbGaEBK6B5lPRHI735LiRs"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-body-md text-body-md text-on-surface">Organic Hem T-Shirt</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">$85</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Size: L | Color: Ash</p>
+</div>
+<div class="flex items-center justify-between mt-4">
+<div class="flex items-center border border-outline-variant/30 rounded px-2 py-1 bg-surface-container-low">
+<button class="text-on-surface-variant hover:text-primary px-1"><span class="material-symbols-outlined text-[16px]">remove</span></button>
+<span class="font-label-sm text-label-sm text-on-surface px-3">2</span>
+<button class="text-on-surface-variant hover:text-primary px-1"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-error transition-colors underline decoration-1 underline-offset-4">Remove</button>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex gap-6 pb-6 border-b border-outline-variant/10">
+<div class="w-24 h-32 bg-surface-container overflow-hidden rounded">
+<img alt="Product Image" class="w-full h-full object-cover opacity-90" data-alt="A pair of sleek, tailored dark grey trousers folded precisely on a dark textured surface. The lighting is moody and directional, casting subtle shadows that highlight the fabric's high-quality weave. The overall mood is sophisticated and eco-conscious, fitting seamlessly into a quiet luxury, dark mode digital lookbook." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn5qpAyEqfcExA730h9A-2RTFnZu42TpTMI4JU2IH7MppBnCWRLjWcfJmG5eijZZkurWwDCG0DB5_JWSRK2Lkz-3MEVt6yhqaK2epiNX5dpykOuwMdH0hNHOoj3GcXz0aZMIFzgECwl99rsXEix3Sj0w_p1_XAH7jTLrby6NwlYxLEosJYYvu6CTPVpArYe0ir9P0fyO88CBANDhNdrri8rU30sWpNdBQ6di6MEGPSoZN07yVnPrBiqU6GW6RaUEiVraBXTI2SW2k"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-body-md text-body-md text-on-surface">Tailored Recycled Trouser</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">$210</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Size: 32 | Color: Slate</p>
+</div>
+<div class="flex items-center justify-between mt-4">
+<div class="flex items-center border border-outline-variant/30 rounded px-2 py-1 bg-surface-container-low">
+<button class="text-on-surface-variant hover:text-primary px-1"><span class="material-symbols-outlined text-[16px]">remove</span></button>
+<span class="font-label-sm text-label-sm text-on-surface px-3">1</span>
+<button class="text-on-surface-variant hover:text-primary px-1"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-error transition-colors underline decoration-1 underline-offset-4">Remove</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer / Checkout Section -->
+<div class="px-8 py-6 bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="space-y-3 mb-6">
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Subtotal</span>
+<span>$865.00</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Shipping</span>
+<span>Calculated at checkout</span>
+</div>
+<div class="flex justify-between font-headline-md text-headline-md text-on-surface pt-4 border-t border-outline-variant/10">
+<span>Total</span>
+<span>$865.00</span>
+</div>
+</div>
+<button class="w-full bg-primary-container text-[#0C0D0C] font-label-sm text-label-sm py-4 rounded glow-button transition-all duration-300 flex justify-center items-center gap-2">
+                Proceed to Checkout
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<p class="text-center font-label-sm text-label-sm text-on-surface-variant mt-4 opacity-70">Taxes and duties included where applicable.</p>
+</div>
+</aside>
+</body></html>

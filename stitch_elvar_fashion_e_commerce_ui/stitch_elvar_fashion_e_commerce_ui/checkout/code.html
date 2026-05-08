@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELVARÉ - Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;600&amp;family=EB+Garamond:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#2a322a",
+                        "secondary-fixed": "#6dfe9c",
+                        "tertiary-container": "#ff8b7c",
+                        "primary-fixed": "#6bff8f",
+                        "secondary": "#4de082",
+                        "tertiary-fixed": "#ffdad5",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#242c24",
+                        "tertiary-fixed-dim": "#ffb4a9",
+                        "on-tertiary": "#60130d",
+                        "on-tertiary-fixed-variant": "#7f2a21",
+                        "primary": "#4be277",
+                        "on-background": "#dce5d9",
+                        "inverse-primary": "#006e2f",
+                        "inverse-surface": "#dce5d9",
+                        "tertiary": "#ffb5ab",
+                        "primary-container": "#22c55e",
+                        "surface-container-low": "#161d16",
+                        "on-secondary": "#003919",
+                        "outline-variant": "#3d4a3d",
+                        "on-primary-fixed-variant": "#005321",
+                        "on-secondary-fixed": "#00210c",
+                        "surface-container-highest": "#2f372e",
+                        "surface-tint": "#4ae176",
+                        "secondary-fixed-dim": "#4de082",
+                        "secondary-container": "#00b55d",
+                        "on-secondary-fixed-variant": "#005227",
+                        "on-surface": "#dce5d9",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#4ae176",
+                        "surface": "#0e150e",
+                        "on-primary": "#003915",
+                        "outline": "#869585",
+                        "surface-dim": "#0e150e",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "surface-container": "#1a221a",
+                        "surface-variant": "#2f372e",
+                        "on-tertiary-fixed": "#410001",
+                        "on-secondary-container": "#003e1c",
+                        "on-tertiary-container": "#76231b",
+                        "on-primary-fixed": "#002109",
+                        "background": "#0e150e",
+                        "surface-bright": "#333b33",
+                        "on-primary-container": "#004b1e",
+                        "surface-container-lowest": "#091009",
+                        "on-surface-variant": "#bccbb9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "container-max": "1440px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["ebGaramond"],
+                        "label-sm": ["dmSans"],
+                        "display-lg": ["ebGaramond"],
+                        "body-lg": ["dmSans"],
+                        "headline-md": ["ebGaramond"],
+                        "body-md": ["dmSans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-background">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/20">
+<!-- Brand -->
+<div class="flex items-center">
+<span class="font-headline-md text-headline-md tracking-tighter text-on-surface font-extrabold">ELVARÉ</span>
+</div>
+<!-- Navigation (Hidden on Mobile per rules, but showing for desktop checkout flow context) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300" href="#">Shop</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300" href="#">Collections</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300" href="#">Sale</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-6 text-primary">
+<button class="scale-95 active:scale-90 transition-transform hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="scale-95 active:scale-90 transition-transform hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button class="scale-95 active:scale-90 transition-transform hover:text-primary transition-colors duration-300 relative">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary-container"></span>
+</span>
+</button>
+<button class="scale-95 active:scale-90 transition-transform hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[120px] pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Checkout Progress Indicator -->
+<div class="mb-16 w-full max-w-3xl mx-auto">
+<div class="flex items-center justify-between relative">
+<!-- Line -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-px bg-outline-variant/30 -z-10"></div>
+<!-- Step 1 (Active) -->
+<div class="flex flex-col items-center gap-3 bg-background px-4">
+<div class="w-8 h-8 rounded-full bg-primary-container text-background flex items-center justify-center font-label-sm shadow-[0_0_12px_rgba(34,197,94,0.3)]">
+                        1
+                    </div>
+<span class="font-label-sm text-primary tracking-widest">ORDER REVIEW</span>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center gap-3 bg-background px-4 opacity-50">
+<div class="w-8 h-8 rounded-full border border-outline-variant bg-surface-container flex items-center justify-center font-label-sm text-on-surface-variant">
+                        2
+                    </div>
+<span class="font-label-sm text-on-surface-variant tracking-widest">DELIVERY</span>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center gap-3 bg-background px-4 opacity-50">
+<div class="w-8 h-8 rounded-full border border-outline-variant bg-surface-container flex items-center justify-center font-label-sm text-on-surface-variant">
+                        3
+                    </div>
+<span class="font-label-sm text-on-surface-variant tracking-widest">PAYMENT</span>
+</div>
+</div>
+</div>
+<!-- 2-Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Order Review Details -->
+<div class="lg:col-span-7 xl:col-span-8 flex flex-col gap-8">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Your Selection</h1>
+<div class="flex flex-col gap-6">
+<!-- Item 1 -->
+<div class="flex flex-col sm:flex-row gap-6 p-6 rounded-lg bg-surface/40 backdrop-blur-md border border-outline-variant/20 relative group">
+<div class="w-full sm:w-32 h-40 bg-surface-container rounded-DEFAULT overflow-hidden relative border border-outline-variant/10">
+<img class="w-full h-full object-cover mix-blend-luminosity opacity-80 group-hover:opacity-100 transition-opacity duration-500" data-alt="A high-end, minimalist studio photograph of a sustainable luxury organic cotton t-shirt in deep forest green. The garment is laid flat against a dark, moody background with subtle, dramatic lighting highlighting the texture of the fabric. The aesthetic is clean, premium, and aligns with a dark mode, Scandinavian-inspired design system. The overall tone is calm and exclusive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb22e8ABw-rlAGGJVaw2b1WpbKhRL2VSpYcCfvABz9ttvevph-pGtiz9AnqNR07kMG9o8p8piZ_iEVSByFaZ4U7jhqdzm3zDMWUqyVY5eQKbouBmjGfPqWtMoMWGjVidFibpjR_RlzCXUcfN8UKEBSaQ4Ak0rL1K4QrGwvI3xbXKB7LDPqOK40fUkNFtmZaT3_MhSnsBcds__A6b5H2aZiBwdnBXkhfwUi_jOLm4HePDefez3f2dYfG7iIob3cJGGhQtZkxhKMXsI"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div class="flex justify-between items-start gap-4">
+<div>
+<h3 class="font-headline-md text-[24px] text-on-surface mb-1">Organic Canvas Over-Shirt</h3>
+<p class="font-body-md text-on-surface-variant">Color: Obsidian Green</p>
+<p class="font-body-md text-on-surface-variant">Size: Medium</p>
+</div>
+<p class="font-body-lg text-on-surface">$185.00</p>
+</div>
+<div class="flex justify-between items-end mt-6">
+<div class="flex items-center gap-4 bg-surface-container px-3 py-1 rounded-full border border-outline-variant/30">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]" data-icon="remove">remove</span></button>
+<span class="font-label-sm text-on-surface w-4 text-center">1</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]" data-icon="add">add</span></button>
+</div>
+<button class="font-label-sm text-error hover:text-on-error-container transition-colors tracking-widest border-b border-transparent hover:border-error pb-0.5">REMOVE</button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col sm:flex-row gap-6 p-6 rounded-lg bg-surface/40 backdrop-blur-md border border-outline-variant/20 relative group">
+<div class="w-full sm:w-32 h-40 bg-surface-container rounded-DEFAULT overflow-hidden relative border border-outline-variant/10">
+<img class="w-full h-full object-cover mix-blend-luminosity opacity-80 group-hover:opacity-100 transition-opacity duration-500" data-alt="A sophisticated, high-fashion product shot of a sleek, minimalist sustainable leather tote bag in charcoal black. The bag sits on a dark, reflective surface under soft, atmospheric lighting. The composition utilizes negative space to convey a sense of 'Quiet Luxury'. The visual style perfectly complements a dark mode, future-facing digital interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy1Qew1PDerkpqlj9t7pD3IeVHuEt3mF0C9jUDiuLkIH7urkQGopSe4e025qqmZ2dECzxRkV5kwDGyjF-7gnAikkaKjaWF2mRQdV18B_RSnEyyWgkPUZr9Izl3tWh3Kf5nQ388EfC7Ei25Y66Hs3cHmR0gwmXZ_w1w5wHEn71-RPTg26GSxm79e0YH7cFKW0wSurn8pDfIfLdFp5oEYfdM443eQ8aqzdnMGCzYcWFC3b8uVKOWl1usrO_o8Lcadh2HXGKxjOlleYo"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div class="flex justify-between items-start gap-4">
+<div>
+<h3 class="font-headline-md text-[24px] text-on-surface mb-1">Mycelium Leather Tote</h3>
+<p class="font-body-md text-on-surface-variant">Color: Carbon</p>
+<div class="mt-2 inline-flex items-center gap-1 bg-primary/10 px-2 py-0.5 rounded-sm">
+<span class="material-symbols-outlined text-primary text-[14px]" data-icon="eco">eco</span>
+<span class="font-label-sm text-primary text-[10px]">100% Vegan</span>
+</div>
+</div>
+<p class="font-body-lg text-on-surface">$420.00</p>
+</div>
+<div class="flex justify-between items-end mt-6">
+<div class="flex items-center gap-4 bg-surface-container px-3 py-1 rounded-full border border-outline-variant/30">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]" data-icon="remove">remove</span></button>
+<span class="font-label-sm text-on-surface w-4 text-center">1</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]" data-icon="add">add</span></button>
+</div>
+<button class="font-label-sm text-error hover:text-on-error-container transition-colors tracking-widest border-b border-transparent hover:border-error pb-0.5">REMOVE</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Order Summary Sidebar -->
+<div class="lg:col-span-5 xl:col-span-4 sticky top-32">
+<div class="bg-surface-container rounded-xl p-8 border border-outline-variant/30 shadow-[0_8px_32px_rgba(0,0,0,0.4)] flex flex-col gap-6">
+<h2 class="font-headline-md text-[28px] text-on-surface border-b border-outline-variant/20 pb-4">Order Summary</h2>
+<div class="flex flex-col gap-4 font-body-md text-on-surface-variant">
+<div class="flex justify-between">
+<span>Subtotal</span>
+<span class="text-on-surface">$605.00</span>
+</div>
+<div class="flex justify-between">
+<span>Shipping</span>
+<span>Calculated next step</span>
+</div>
+<div class="flex justify-between">
+<span>Taxes</span>
+<span>Calculated next step</span>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 pt-6 mt-2 flex justify-between items-end">
+<span class="font-body-lg text-on-surface-variant">Estimated Total</span>
+<span class="font-headline-md text-[32px] text-on-surface">$605.00</span>
+</div>
+<button class="w-full mt-4 bg-primary-container text-background font-label-sm tracking-[0.1em] py-4 rounded-DEFAULT flex items-center justify-center gap-2 hover:bg-primary transition-colors duration-300 shadow-[0_0_20px_rgba(34,197,94,0.15)] hover:shadow-[0_0_30px_rgba(34,197,94,0.3)]">
+                        CONTINUE TO DELIVERY
+                        <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="font-label-sm text-on-surface-variant/70 text-center mt-2 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="lock">lock</span>
+                        Secure Checkout
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-mobile md:px-margin-desktop py-16 bg-surface-container-lowest border-t border-outline-variant/20 mt-auto">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Brand & Copyright -->
+<div class="col-span-1 flex flex-col justify-between h-full gap-8">
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tighter">ELVARÉ</span>
+<p class="font-body-md text-on-surface-variant text-sm">© 2024 ELVARÉ. Sustainable Luxury.</p>
+</div>
+<!-- Links (Distributed across remaining columns) -->
+<div class="col-span-1 flex flex-col gap-4">
+<a class="font-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Shop All</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">New Arrivals</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Sustainability</a>
+</div>
+<div class="col-span-1 flex flex-col gap-4">
+<a class="font-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Journal</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Shipping</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Returns</a>
+</div>
+<div class="col-span-1 flex flex-col gap-4">
+<a class="font-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Contact</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Privacy</a>
+</div>
+</div>
+</footer>
+</body></html>

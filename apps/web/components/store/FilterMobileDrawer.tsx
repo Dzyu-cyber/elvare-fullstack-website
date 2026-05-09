@@ -12,7 +12,7 @@ export function FilterMobileDrawer() {
   return (
     <div className="md:hidden">
       <Button
-        variant="outline"
+        variant="secondary"
         size="sm"
         onClick={() => setIsOpen(true)}
         className="flex items-center gap-2"

@@ -41,12 +41,13 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-wrap items-center gap-6"
         >
-          <Button
-            asChild
-            className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[var(--color-bg)] font-medium px-8 py-4 rounded-full hover:shadow-[0_0_20px_rgba(34,197,94,0.2)] transition-shadow"
-          >
-            <Link href="/shop">Shop Now</Link>
-          </Button>
+          <Link href="/shop">
+            <Button
+              className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[var(--color-bg)] font-medium px-8 py-4 rounded-full hover:shadow-[0_0_20px_rgba(34,197,94,0.2)] transition-shadow"
+            >
+              Shop Now
+            </Button>
+          </Link>
           
           <Link
             href="/collections"

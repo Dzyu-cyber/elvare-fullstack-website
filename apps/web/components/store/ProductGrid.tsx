@@ -67,7 +67,7 @@ export function ProductGrid() {
       {meta.totalPages > 1 && (
         <div className="flex justify-center gap-2 mt-12">
           <Button
-            variant="outline"
+            variant="secondary"
             size="sm"
             disabled={meta.page === 1}
             onClick={() => handlePageChange(meta.page - 1)}
@@ -78,7 +78,7 @@ export function ProductGrid() {
             Page {meta.page} of {meta.totalPages}
           </span>
           <Button
-            variant="outline"
+            variant="secondary"
             size="sm"
             disabled={meta.page === meta.totalPages}
             onClick={() => handlePageChange(meta.page + 1)}

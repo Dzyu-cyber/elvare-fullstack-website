@@ -12,8 +12,8 @@ const productSchema = z.object({
   slug: z.string().min(3, 'Slug must be at least 3 characters'),
   description: z.string().min(10, 'Description must be at least 10 characters'),
   category: z.string().min(1, 'Category is required'),
-  price: z.preprocess((val) => Number(val), z.number().min(0, 'Price must be positive')),
-  comparePrice: z.preprocess((val) => val === '' ? undefined : Number(val), z.number().min(0).optional()),
+  price: z.coerce.number().min(0, 'Price must be positive'),
+  comparePrice: z.coerce.number().optional(),
   tags: z.string().optional(),
   isPublished: z.boolean().default(false),
   isFeatured: z.boolean().default(false),
@@ -29,7 +29,7 @@ export function ProductForm({ initialData }: ProductFormProps) {
   const [variants, setVariants] = useState([{ size: 'M', color: 'Black', stock: 10, sku: 'SKU-001' }]);
   const [images, setImages] = useState<string[]>([]);
 
-  const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm<ProductFormValues>({
+  const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm({
     resolver: zodResolver(productSchema),
     defaultValues: {
       isPublished: false,

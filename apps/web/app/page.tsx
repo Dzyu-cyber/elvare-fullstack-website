@@ -3,8 +3,8 @@ import { CategoryStrip } from '@/components/store/CategoryStrip';
 import { FeaturedProducts } from '@/components/store/FeaturedProducts';
 import dynamic from 'next/dynamic';
 
-const BrandValues = dynamic(() => import('@/components/store/BrandValues'));
-const Newsletter = dynamic(() => import('@/components/store/Newsletter'));
+const BrandValues = dynamic(() => import('@/components/store/BrandValues').then(mod => mod.BrandValues));
+const Newsletter = dynamic(() => import('@/components/store/Newsletter').then(mod => mod.Newsletter));
 
 export default function Home() {
   return (

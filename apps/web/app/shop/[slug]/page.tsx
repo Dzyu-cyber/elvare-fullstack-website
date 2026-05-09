@@ -6,7 +6,7 @@ import { ProductInteractiveSection } from '@/components/store/ProductInteractive
 import { Star, Shield, Truck, RefreshCw } from 'lucide-react';
 
 async function getProduct(slug: string) {
-  const res = await fetch(`http://localhost:4000/api/products/${slug}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api'}/products/${slug}`, {
     cache: 'no-store', // Ensure fresh data
   });
   if (!res.ok) return null;

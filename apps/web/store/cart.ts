@@ -92,7 +92,7 @@ export const useCartStore = create<CartStore>()(
 
       syncWithServer: async () => {
         try {
-          const res = await fetch('http://localhost:4000/api/cart');
+          const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api'}/cart`);
           if (res.ok) {
             const json = await res.json();
             const serverItems = json.data.items;

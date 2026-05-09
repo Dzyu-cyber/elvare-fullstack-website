@@ -36,7 +36,7 @@ export function useProducts() {
   const { data, isLoading, error, isFetching } = useQuery({
     queryKey,
     queryFn: async () => {
-      const res = await fetch(`http://localhost:4000/api/products?${queryParams.toString()}`);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api'}/products?${queryParams.toString()}`);
       if (!res.ok) throw new Error('Failed to fetch products');
       return res.json();
     },

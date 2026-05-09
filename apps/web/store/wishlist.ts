@@ -35,7 +35,7 @@ export const useWishlistStore = create<WishlistStore>()(
 
       syncWithServer: async () => {
         try {
-          const res = await fetch('http://localhost:4000/api/wishlist');
+          const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api'}/wishlist`);
           if (res.ok) {
             const json = await res.json();
             const serverItems = json.data.map((item: any) => ({

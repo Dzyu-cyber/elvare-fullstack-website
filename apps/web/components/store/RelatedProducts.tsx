@@ -12,7 +12,7 @@ export function RelatedProducts({ categorySlug, currentProductId }: RelatedProdu
   const { data, isLoading, error } = useQuery({
     queryKey: ['related-products', categorySlug],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:4000/api/products?category=${categorySlug}&limit=5`);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api'}/products?category=${categorySlug}&limit=5`);
       if (!res.ok) throw new Error('Failed to fetch');
       const json = await res.json();
       return json.data.products.filter((p: any) => p.id !== currentProductId).slice(0, 4);

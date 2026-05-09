@@ -2,6 +2,7 @@
   "name": "elvare-fullstack",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@11.0.9",
   "scripts": {
     "dev:web": "pnpm --filter web dev",
     "dev:api": "pnpm --filter api start:dev",

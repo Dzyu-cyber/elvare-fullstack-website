@@ -18,7 +18,7 @@ const addressSchema = z.object({
   city: z.string().min(2, "City is required"),
   state: z.string().min(2, "State is required"),
   pincode: z.string().min(6, "Pincode must be 6 digits"),
-  country: z.string().default("India"),
+  country: z.string(),
   phone: z.string().min(10, "Phone number must be at least 10 digits"),
 });
 

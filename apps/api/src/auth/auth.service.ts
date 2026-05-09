@@ -91,6 +91,9 @@ export class AuthService {
       if (!data.currentPassword) {
         throw new BadRequestException('Current password is required to change password');
       }
+      if (!user.passwordHash) {
+        throw new BadRequestException('Account has no password set');
+      }
       const isPasswordValid = await bcrypt.compare(data.currentPassword, user.passwordHash);
       if (!isPasswordValid) {
         throw new UnauthorizedException('Invalid current password');

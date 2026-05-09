@@ -11,7 +11,9 @@
     "onlyBuiltDependencies": [
       "@nestjs/core",
       "sharp",
-      "unrs-resolver"
+      "unrs-resolver",
+      "@prisma/engines",
+      "prisma"
     ]
   },
   "devDependencies": {

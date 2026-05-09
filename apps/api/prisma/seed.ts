@@ -72,6 +72,16 @@ async function main() {
 
   console.log(`Created ${createdCategories.length} categories.`);
 
+  // Cleanup old products and related items
+  console.log('Cleaning up old products...');
+  await prisma.productImage.deleteMany({});
+  await prisma.productVariant.deleteMany({});
+  await prisma.cartItem.deleteMany({});
+  await prisma.orderItem.deleteMany({});
+  await prisma.wishlistItem.deleteMany({});
+  await prisma.review.deleteMany({});
+  await prisma.product.deleteMany({});
+
   // 3. Create Products with realistic data
   const sizes = ['S', 'M', 'L', 'XL'];
   const colors = [

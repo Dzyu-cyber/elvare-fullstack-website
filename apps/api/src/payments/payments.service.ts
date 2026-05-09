@@ -8,8 +8,8 @@ export class PaymentsService {
 
   constructor(private configService: ConfigService) {
     this.razorpay = new Razorpay({
-      key_id: this.configService.get<string>('RAZORPAY_KEY_ID') || '',
-      key_secret: this.configService.get<string>('RAZORPAY_KEY_SECRET') || '',
+      key_id: this.configService.get<string>('RAZORPAY_KEY_ID') || 'rzp_test_dummykeyid',
+      key_secret: this.configService.get<string>('RAZORPAY_KEY_SECRET') || 'dummysecret',
     });
   }
 
